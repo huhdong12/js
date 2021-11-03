@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        const PI = 3.14
+        let rawinput = prompt("문제1.입력: ")
+        let rawinput2 = prompt("문제2.입력: ")
+        let r = prompt("문제3.반지름 입력: ")
+        let dollar = prompt("문제4.달러 입력: ")
+        let year = prompt("문제5.자신의 태어난 연도: ")
+        console.log(rawinput * (2.54) + "cm")
+        console.log(rawinput2 * (0.393701) + "inch")
+        console.log("원의 둘레: " + (2 * PI * r))
+        console.log("원의 넓이: " + (PI * r * r))
+        console.log("원화: " + (1207 * dollar) + "KRW")
+        let a1 = year % 12
+        let a = "신유술해자축인묘진사오미"
+        let b = "경신임계갑을병정무기"
+        let x = b[year[3]]
+        let y = a[a1]
+        console.log("출력 : " + x + y + "년")
+    </script>
+    <title>문제풀기</title>
+</head>
+
+<body>
+    <h1>(문제1)1inch = 2.54cm일 때, rawinput을 입력받아서 cm로 환산하시오.</h1>
+    <h2>예) 입력값 1, 출력값 2.54cm</h2>
+    <h1>(문제2)1cm = 0.393701inch일 때, rawinput을 입력받아서 cm로 환산하시오.</h1>
+    <h2>예) 입력값 1, 출력값 0.393701inch</h2>
+    <h1>(문제3)원의 반지름을 입력받고 원의 넓이와 둘레를 구하시오</h1>
+    <h2>단, PI는 3.14이며 상수로 선언하자</h1>
+    <h2>원의 넓이 공식 : 반지름*반지름*3.14</h2>
+    <h2>원의 둘레 공식 : 반지름*2*3.14</h2>
+    <h2>예시 입력 : 4, 출력 : 원의넓이는 50.24, 원의 둘레는 25.12입니다. </h2>
+    <h1>(문제4)1달러가 1207원일 때, 달러에 따른 원화를 출력하시오.</h1>
+    <h2>예시 입력 1000, 출력 : 원화는 1207000KRW입니다.</h2>
+    <h1>(문제5)자신의 태어난 연도를 입력받고 그에 따른 10간지와 12지신띠를 출력하시오.</h1>
+    <h2>10간지: 갑을병정무기경신임계</h2>
+    <h2>12지신:자축인묘진사오미신유술해</h2>
+    <h2>예) 입력 : 1989 출력 : 기사년</h2>
+</body>
+
+</html>
