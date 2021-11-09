@@ -6,35 +6,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <img id="ig">
+    <style>
+        #ig2 {
+            position: absolute;
+            left: 350px;
+        }
+
+        .rela {
+            position: relative;
+        }
+
+        #result {
+            position: absolute;
+            left: 50px;
+            top: 210px;
+        }
+
+        #result2 {
+            position: absolute;
+            left: 400px;
+            top: 210px;
+        }
+
+        #vs {
+            position: absolute;
+            left: 265px;
+            top: 65px;
+        }
+
+        #result3 {
+            color: darkblue;
+            position: absolute;
+            left: 235px;
+            top: 265px;
+        }
+    </style>
+    <img width="200px" height="200px" id="ig">
+    <img width="200px" height="200px" id="ig2">
     <script>
         let ig = document.getElementById("ig")
+        let ig2 = document.getElementById("ig2")
         let random = Math.floor(Math.random() * 3)
 
         function a1() {
-            let a = 1
-            if (random == a){
+            if (random == 0) {
+                ig.src = "mook.jpg"
+                ig2.src = "mook.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "무승부"
+            } else if (random == 1) {
+                ig.src = "mook.jpg"
+                ig2.src = "jji.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "승리"
+            } else if (random == 2) {
+                ig.src = "mook.jpg"
+                ig2.src = "bba.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "패배"
             }
-            ig.src="mook.jpg"
-            document.getElementById('result').innerText = "묵"
-
         }
 
         function a2() {
-
+            if (random == 0) {
+                ig.src = "jji.jpg"
+                ig2.src = "mook.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "패배"
+            } else if (random == 1) {
+                ig.src = "jji.jpg"
+                ig2.src = "jji.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "무승부"
+            } else if (random == 2) {
+                ig.src = "jji.jpg"
+                ig2.src = "bba.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "승리"
+            }
         }
 
         function a3() {
-
+            if (random == 0) {
+                ig.src = "bba.jpg"
+                ig2.src = "mook.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "승리"
+            } else if (random == 1) {
+                ig.src = "bba.jpg"
+                ig2.src = "jji.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "패배"
+            } else if (random == 2) {
+                ig.src = "bba.jpg"
+                ig2.src = "bba.jpg"
+                document.getElementById('result').innerText = "플레이어"
+                document.getElementById('result2').innerText = "컴퓨터"
+                document.getElementById('result3').innerText = "무승부"
+            }
         }
     </script>
 </head>
 
 <body>
-    <button onclick="a1()">묵</button>
-    <button onclick="a2()">찌</button>
-    <button onclick="a3()">빠</button>
+    <button onclick="a1()" class="rela">바위</button>
+    <button onclick="a2()" class="rela">가위</button>
+    <button onclick="a3()" class="rela">보</button>
     <h1 id="result"></h1>
+    <h1 id="result2"></h1>
+    <h1 id="vs">vs</h1>
+    <h1 id="result3"></h1>
+
 </body>
 
 </html>

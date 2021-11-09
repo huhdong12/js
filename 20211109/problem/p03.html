@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <img id="a1">
+    <img width="700px" height="700x" id="a1">
     <script>
         let a1 = document.getElementById('a1')
 
@@ -15,22 +15,28 @@
             if (Number(ex) == 3 || Number(ex) == 4 || Number(ex) == 5) {
                 //document.write("봄")
                 a1.src = "1.jfif"
+                document.getElementById("wtf").innerText = "봄"
                 // a1.src="https://picsum.photos/id/1025/600/400"
-            }
-            if (Number(ex) == 6 || Number(ex) == 7 || Number(ex) == 8)
+            } else if (Number(ex) == 6 || Number(ex) == 7 || Number(ex) == 8) {
                 a1.src = "2.jfif"
-            if (Number(ex) == 9 || Number(ex) == 10 || Number(ex) == 11)
+                document.getElementById("wtf").innerText = "여름"
+            } else if (Number(ex) == 9 || Number(ex) == 10 || Number(ex) == 11) {
                 a1.src = "3.jfif"
-            if (Number(ex) == 12 || Number(ex) == 1 || Number(ex) == 2)
+                document.getElementById("wtf").innerText = "가을"
+            } else if (Number(ex) == 12 || Number(ex) == 1 || Number(ex) == 2) {
                 a1.src = "4.jfif"
+                document.getElementById("wtf").innerText = "겨울"
+            }
         }
     </script>
+
 </head>
 
 <body>
     <h1>자신이 태어난 월 입력</h1>
     <input type="text" id="input">
     <button onclick="show()">해당 월의 계절</button>
+    <h2 id="wtf"></h2>
 </body>
 
 </html>

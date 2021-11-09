@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호</title>
+    <script>
+        function show() {
+            let arr = []
+            Loop1:
+                for (let i = 0; i < 7; i++) {
+                    let random = Math.floor(Math.random() * 46)
+                    for (let j = 0; j < 7; j++) {
+                        if (arr[j] == random) {
+                            i--
+                            continue Loop1;
+                        }
+                    }
+                    arr.push(random)
+                }
+            String(arr[0])
+            String(arr[1])
+            String(arr[2])
+            String(arr[3])
+            String(arr[4])
+            String(arr[5])
+            String(arr[6])
+            document.getElementById("one").innerText="[ "+arr[0]+" , "+arr[1]+" , "+arr[2]+" , "+arr[3]+" , "+arr[4]+" , "+arr[5]+" , "+arr[6]+" ]"
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="show()">로또 번호 출력</button>
+    <h2 id="one"></h2>
+</body>
+
+</html>
