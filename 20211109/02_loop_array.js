@@ -10,7 +10,7 @@ for(let i in myarray2)
     console.log(myarray2[i])
 
     let abcd = '안녕하세요'
-    console.log(abcd[0]) //하 출력
+    console.log(abcd[2]) //하 출력
     //글자의 길이 혹은 배열의 길이 출력
     console.log(abcd.length)
     console.log(myarray1.length)
