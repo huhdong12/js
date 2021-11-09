@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            let one = document.querySelector("#one").value
+            let two = document.querySelector("#two").value
+            document.write(Number(one) + Number(two))
+        }
+
+        function min() {
+            let one = document.querySelector("#b1").value
+            let two = document.querySelector("#b2").value
+            document.write(Number(one) - Number(two))
+        }
+
+        function mul() {
+            let one = document.querySelector("#a1").value
+            let two = document.querySelector("#a2").value
+            document.write(Number(one) * Number(two))
+        }
+
+        function div() {
+            let one = document.querySelector("#c1").value
+            let two = document.querySelector("#c2").value
+            document.write(Number(one) / Number(two))
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="one">
+    <h2 style="display: inline;">+</h2>
+    <input type="text" id="two">
+    <h2 style="display: inline;">=</h2>
+    <button onclick="add()">덧셈</button>
+    <br>
+    <input type="text" id="b1">
+    <h2 style="display: inline;">-</h2>
+    <input type="text" id="b2">
+    <h2 style="display: inline;">=</h2>
+    <button onclick="min()">뺄셈</button>
+    <br>
+    <input type="text" id="a1">
+    <h2 style="display: inline;">×</h2>
+    <input type="text" id="a2">
+    <h2 style="display: inline;">=</h2>
+    <button onclick="mul()">곱셈</button>
+    <br>
+    <input type="text" id="c1">
+    <h2 style="display: inline;">÷</h2>
+    <input type="text" id="c2">
+    <h2 style="display: inline;">=</h2>
+    <button onclick="div()">나눗셈</button>
+
+</body>
+
+</html>

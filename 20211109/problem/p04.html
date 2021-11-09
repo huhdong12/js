@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <img id="ig">
+    <script>
+        let ig = document.getElementById("ig")
+        let random = Math.floor(Math.random() * 3)
+
+        function a1() {
+            let a = 1
+            if (random == a){
+            }
+            ig.src="mook.jpg"
+            document.getElementById('result').innerText = "묵"
+
+        }
+
+        function a2() {
+
+        }
+
+        function a3() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="a1()">묵</button>
+    <button onclick="a2()">찌</button>
+    <button onclick="a3()">빠</button>
+    <h1 id="result"></h1>
+</body>
+
+</html>

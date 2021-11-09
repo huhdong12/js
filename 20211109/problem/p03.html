@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <img id="a1">
+    <script>
+        let a1 = document.getElementById('a1')
+
+        function show() {
+            let ex = document.querySelector("#input").value
+            if (Number(ex) == 3 || Number(ex) == 4 || Number(ex) == 5) {
+                //document.write("봄")
+                a1.src = "1.jfif"
+                // a1.src="https://picsum.photos/id/1025/600/400"
+            }
+            if (Number(ex) == 6 || Number(ex) == 7 || Number(ex) == 8)
+                a1.src = "2.jfif"
+            if (Number(ex) == 9 || Number(ex) == 10 || Number(ex) == 11)
+                a1.src = "3.jfif"
+            if (Number(ex) == 12 || Number(ex) == 1 || Number(ex) == 2)
+                a1.src = "4.jfif"
+        }
+    </script>
+</head>
+
+<body>
+    <h1>자신이 태어난 월 입력</h1>
+    <input type="text" id="input">
+    <button onclick="show()">해당 월의 계절</button>
+</body>
+
+</html>
