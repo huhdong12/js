@@ -11,7 +11,7 @@
             let arr = []
             Loop1:
                 for (let i = 0; i < 7; i++) {
-                    let random = Math.floor(Math.random() * 46)
+                    let random = Math.floor(Math.random() * 45 + 1)
                     for (let j = 0; j < 7; j++) {
                         if (arr[j] == random) {
                             i--
@@ -27,7 +27,8 @@
             String(arr[4])
             String(arr[5])
             String(arr[6])
-            document.getElementById("one").innerText="[ "+arr[0]+" , "+arr[1]+" , "+arr[2]+" , "+arr[3]+" , "+arr[4]+" , "+arr[5]+" , "+arr[6]+" ]"
+            document.getElementById("one").innerText = "[ " + arr[0] + " , " + arr[1] + " , " + arr[2] + " , " + arr[
+                3] + " , " + arr[4] + " , " + arr[5] + " , " + arr[6] + " ]"
         }
     </script>
 </head>
