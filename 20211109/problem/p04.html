@@ -46,9 +46,10 @@
     <script>
         let ig = document.getElementById("ig")
         let ig2 = document.getElementById("ig2")
-        let random = Math.floor(Math.random() * 3)
+
 
         function a1() {
+            let random = Math.floor(Math.random() * 3)
             if (random == 0) {
                 ig.src = "mook.jpg"
                 ig2.src = "mook.jpg"
@@ -71,19 +72,20 @@
         }
 
         function a2() {
-            if (random == 0) {
+            let random2 = Math.floor(Math.random() * 3)
+            if (random2 == 0) {
                 ig.src = "jji.jpg"
                 ig2.src = "mook.jpg"
                 document.getElementById('result').innerText = "플레이어"
                 document.getElementById('result2').innerText = "컴퓨터"
                 document.getElementById('result3').innerText = "패배"
-            } else if (random == 1) {
+            } else if (random2 == 1) {
                 ig.src = "jji.jpg"
                 ig2.src = "jji.jpg"
                 document.getElementById('result').innerText = "플레이어"
                 document.getElementById('result2').innerText = "컴퓨터"
                 document.getElementById('result3').innerText = "무승부"
-            } else if (random == 2) {
+            } else if (random2 == 2) {
                 ig.src = "jji.jpg"
                 ig2.src = "bba.jpg"
                 document.getElementById('result').innerText = "플레이어"
@@ -93,19 +95,20 @@
         }
 
         function a3() {
-            if (random == 0) {
+            let random3 = Math.floor(Math.random() * 3)
+            if (random3 == 0) {
                 ig.src = "bba.jpg"
                 ig2.src = "mook.jpg"
                 document.getElementById('result').innerText = "플레이어"
                 document.getElementById('result2').innerText = "컴퓨터"
                 document.getElementById('result3').innerText = "승리"
-            } else if (random == 1) {
+            } else if (random3 == 1) {
                 ig.src = "bba.jpg"
                 ig2.src = "jji.jpg"
                 document.getElementById('result').innerText = "플레이어"
                 document.getElementById('result2').innerText = "컴퓨터"
                 document.getElementById('result3').innerText = "패배"
-            } else if (random == 2) {
+            } else if (random3 == 2) {
                 ig.src = "bba.jpg"
                 ig2.src = "bba.jpg"
                 document.getElementById('result').innerText = "플레이어"
