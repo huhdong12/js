@@ -71,11 +71,11 @@
             }
         }
         del.onclick = function () {
-            for (let item of member) {
-                if (item.num == num.value) {
-                    member.splice(item, 1)
-                }
+            for (let i = 0; i < member.length; i++) {
+                if (num.value == member[i].num)
+                    member.splice(i, 1)
             }
+            alert("삭제 완료")
         }
         view.onclick = function () {
             for (let item of member) {
