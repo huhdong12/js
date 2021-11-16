@@ -58,8 +58,8 @@
         let mycolor = ["yellow", "blue", "red", "gray", "green"]
         let mc = [];
         random_button.onclick = function () {
-            mc = Math.floor(Math.random() * mycolor.length)
             for (let item of h1list) {
+                mc = Math.floor(Math.random() * mycolor.length)
                 item.style.backgroundColor = mycolor[mc]
             }
         }
