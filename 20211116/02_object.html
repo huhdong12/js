@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        let student = {
+            name: "이동준",
+            age: 33,
+            language: ["js", "jq", "c#", "c", "c++", "HTML+css"],
+            introduce: function () {
+                alert("안녕하세요")
+            }
+        }
+        document.querySelectorAll("h1")[0].innerText = student.name
+        document.querySelectorAll("h1")[1].innerText = student.age
+        document.querySelectorAll("h1")[2].innerText = student.language
+        student.introduce()
+
+        let students = [{
+            name: "허동화",
+            gender: "남성"
+        }, {
+            name: "아무개",
+            skill: "프로그래밍"
+        }, student]
+
+        console.log(students[0].name)
+        console.log(students[0].gender)
+
+        console.log(students[1].name)
+        console.log(students[1].skill)
+
+        console.log(students[2].name)
+        console.log(students[2].age)
+    </script>
+</body>
+
+</html>
