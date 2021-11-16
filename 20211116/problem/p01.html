@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 등록</title>
+    <script>
+        function student(num, name, age) {
+            this.num = num
+            this.name = name
+            this.age = age
+            this.out = function () {
+                alert(name + " 등록 완료")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    번호 : <input type="text"> <br>
+    이름 : <input type="text"> <br>
+    나이 : <input type="text"> <br>
+    <br>
+    <hr>
+    <br>
+    <button>등록</button>
+    <button>수정</button>
+    <button>삭제</button>
+    <button>조회</button>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <script>
+        let num = document.querySelectorAll("input")[0]
+        let name = document.querySelectorAll("input")[1]
+        let age = document.querySelectorAll("input")[2]
+
+        let insert = document.querySelectorAll("button")[0]
+        let change = document.querySelectorAll("button")[1]
+        let del = document.querySelectorAll("button")[2]
+        let view = document.querySelectorAll("button")[3]
+
+        let member = []
+        insert.onclick = function () {
+            let stu = new student(num.value, name.value, age.value)
+            Loop1:
+                for (let i = 0;; i++) {
+                    let stu = new student(num.value, name.value, age.value)
+                    for (let item of member) {
+                        if (item.num == stu.num) {
+                            alert("중복")
+                            i--
+                            break Loop1
+                        }
+                    }
+                    member.push(stu)
+                    stu.out()
+                    break
+                }
+        }
+        change.onclick = function () {
+            for (let item of member) {
+                if (item.num == num.value) {
+                    item.name = name.value
+                    item.age = age.value
+                    alert("수정 완료")
+                }
+            }
+        }
+        del.onclick = function () {
+            for (let item of member) {
+                if (item.num == num.value) {
+                    member.splice(item, 1)
+                }
+            }
+        }
+        view.onclick = function () {
+            for (let item of member) {
+                if (item.num == num.value) {
+                    alert("이름:" + item.name + "   나이:" + item.age)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
