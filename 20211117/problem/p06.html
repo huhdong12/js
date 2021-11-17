@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 25px 25px 25px 25px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            display: inline-block;
+        }
+    </style>
+    <script>
+        class member {
+            constructor(number, one, two, three, four, five, six, seven) {
+                this.number = number
+                this.one = one
+                this.two = two
+                this.three = three
+                this.four = four
+                this.five = five
+                this.six = six
+                this.seven = seven
+            }
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            let number = document.querySelector("input")
+            let h1list = document.querySelectorAll("h1")
+            let push = document.querySelector("#make")
+            let hwecha = document.querySelectorAll("h2")
+            let lottos = []
+            let j = 0
+            let z = 0
+
+            push.onclick = function () {
+                for (let item of lottos) {
+                    if (item.number == number.value) {
+                        alert("회차 중복")
+                        return
+                    }
+                }
+                let a = []
+                for (let i = 0; i < 7; i++) {
+                    let num = Math.floor(Math.random() * 45) + 1
+                    if (i > 0) {
+                        if (a.indexOf(num) != -1) {
+                            i--
+                            continue
+                        }
+                    }
+                    a[i] = Number(num)
+                }
+                let lotto = new member(number.value, a[0], a[1], a[2], a[3], a[4], a[5], a[6])
+                lottos.push(lotto)
+                if (j == 0) {
+                    h1list[j].innerText = lottos[z].one
+                    h1list[j + 1].innerText = lottos[z].two
+                    h1list[j + 2].innerText = lottos[z].three
+                    h1list[j + 3].innerText = lottos[z].four
+                    h1list[j + 4].innerText = lottos[z].five
+                    h1list[j + 5].innerText = lottos[z].six
+                    h1list[j + 6].innerText = lottos[z].seven
+                    hwecha[j].innerText = lottos[z].number + "회차"
+                    z++
+                    j = 7
+                } else if (j == 7) {
+                    h1list[j].innerText = lottos[z].one
+                    h1list[j + 1].innerText = lottos[z].two
+                    h1list[j + 2].innerText = lottos[z].three
+                    h1list[j + 3].innerText = lottos[z].four
+                    h1list[j + 4].innerText = lottos[z].five
+                    h1list[j + 5].innerText = lottos[z].six
+                    h1list[j + 6].innerText = lottos[z].seven
+                    hwecha[j - 6].innerText = lottos[z].number + "회차"
+                    z++
+                    j = 14
+                } else if (j = 14) {
+                    h1list[j].innerText = lottos[z].one
+                    h1list[j + 1].innerText = lottos[z].two
+                    h1list[j + 2].innerText = lottos[z].three
+                    h1list[j + 3].innerText = lottos[z].four
+                    h1list[j + 4].innerText = lottos[z].five
+                    h1list[j + 5].innerText = lottos[z].six
+                    h1list[j + 6].innerText = lottos[z].seven
+                    hwecha[j - 12].innerText = lottos[z].number + "회차"
+                    z++
+                    j = 0
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <br><br>
+    회차 : <input type="text">
+    <button id="make">로또 생성하기</button>
+    <button>색상을 하나 하나 다 랜덤하게 하기</button>
+    <button>색상을 회차별로 랜덤하게 하기</button>
+    <button>색상을 통일시켜서 랜덤하게 하기</button>
+    <button>색상을 번호별로 다르게 하기</button>
+    <br><br>
+    <hr>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h2></h2>
+    <hr>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h2></h2>
+    <hr>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h2></h2>
+</body>
+
+</html>
