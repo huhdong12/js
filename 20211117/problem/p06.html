@@ -40,9 +40,19 @@
             let h1list = document.querySelectorAll("h1")
             let push = document.querySelector("#make")
             let hwecha = document.querySelectorAll("h2")
+            let onebye = document.querySelector("#oneby")
+            let hwerandom = document.querySelector("#hweran")
+            let allrandom = document.querySelector("#allran")
+            let numberbyran = document.querySelector("#numberby")
             let lottos = []
             let j = 0
             let z = 0
+
+            let mycolor = ["yellow", "blue", "red", "green", "gray", "pink", "skyblue", "purple"]
+
+            let h1first = document.querySelectorAll(".first")
+            let h1second = document.querySelectorAll(".second")
+            let h1third = document.querySelectorAll(".third")
 
             push.onclick = function () {
                 for (let item of lottos) {
@@ -99,8 +109,67 @@
                     j = 0
                 }
             }
-
-
+            onebye.onclick = function () {
+                for (let item of h1list) {
+                    mc = Math.floor(Math.random() * mycolor.length)
+                    item.style.backgroundColor = mycolor[mc]
+                }
+            }
+            hwerandom.onclick = function () {
+                mc = Math.floor(Math.random() * mycolor.length)
+                for (let item of h1first) {
+                    item.style.backgroundColor = mycolor[mc]
+                }
+                mc = Math.floor(Math.random() * mycolor.length)
+                for (let item of h1second) {
+                    item.style.backgroundColor = mycolor[mc]
+                }
+                mc = Math.floor(Math.random() * mycolor.length)
+                for (let item of h1third) {
+                    item.style.backgroundColor = mycolor[mc]
+                }
+            }
+            allrandom.onclick = function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                for (let item of h1list) {
+                    item.style.backgroundColor = `rgb(${b1},${b2},${b3})`
+                }
+            }
+            numberbyran.onclick = function () {
+                for (let item of h1list) {
+                    if (Number(item.innerText) < 11) {
+                        item.style.backgroundColor = "yellow"
+                    } else if (Number(item.innerText) > 10 && Number(item.innerText) < 21) {
+                        item.style.backgroundColor = "blue"
+                    } else if (Number(item.innerText) > 20 && Number(item.innerText) < 31) {
+                        item.style.backgroundColor = "red"
+                    } else if (Number(item.innerText) > 30 && Number(item.innerText) < 41) {
+                        item.style.backgroundColor = "gray"
+                    } else if (Number(item.innerText) > 40 && Number(item.innerText) < 46) {
+                        item.style.backgroundColor = "green"
+                    }
+                }
+            }
+            let bewhite = document.querySelector("#colorwhite")
+            bewhite.onclick = function () {
+                for (let item of h1list) {
+                    if (Number(item.innerText) < 11) {
+                        item.style.backgroundColor = "yellow"
+                    } else if (Number(item.innerText) > 10 && Number(item.innerText) < 21) {
+                        item.style.backgroundColor = "blue"
+                        item.style.color = "white"
+                    } else if (Number(item.innerText) > 20 && Number(item.innerText) < 31) {
+                        item.style.backgroundColor = "red"
+                        item.style.color = "white"
+                    } else if (Number(item.innerText) > 30 && Number(item.innerText) < 41) {
+                        item.style.backgroundColor = "gray"
+                    } else if (Number(item.innerText) > 40 && Number(item.innerText) < 46) {
+                        item.style.backgroundColor = "green"
+                    }
+                }
+            }
         }
     </script>
 </head>
@@ -109,37 +178,38 @@
     <br><br>
     회차 : <input type="text">
     <button id="make">로또 생성하기</button>
-    <button>색상을 하나 하나 다 랜덤하게 하기</button>
-    <button>색상을 회차별로 랜덤하게 하기</button>
-    <button>색상을 통일시켜서 랜덤하게 하기</button>
-    <button>색상을 번호별로 다르게 하기</button>
+    <button id="oneby">색상을 하나 하나 다 랜덤하게 하기</button>
+    <button id="hweran">색상을 회차별로 랜덤하게 하기</button>
+    <button id="allran">색상을 통일시켜서 랜덤하게 하기</button>
+    <button id="numberby">색상을 번호별로 다르게 하기</button>
+    <button id="colorwhite">번호별로 색상 다르게 하기_빨강,파랑일 경우 글자 흰색</button>
     <br><br>
     <hr>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
+    <h1 class="first"></h1>
     <h2></h2>
     <hr>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
+    <h1 class="second"></h1>
     <h2></h2>
     <hr>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
+    <h1 class="third"></h1>
     <h2></h2>
 </body>
 
