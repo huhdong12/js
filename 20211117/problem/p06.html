@@ -112,20 +112,24 @@
             onebye.onclick = function () {
                 for (let item of h1list) {
                     mc = Math.floor(Math.random() * mycolor.length)
+                    item.style.color = "black"
                     item.style.backgroundColor = mycolor[mc]
                 }
             }
             hwerandom.onclick = function () {
                 mc = Math.floor(Math.random() * mycolor.length)
                 for (let item of h1first) {
+                    item.style.color = "black"
                     item.style.backgroundColor = mycolor[mc]
                 }
                 mc = Math.floor(Math.random() * mycolor.length)
                 for (let item of h1second) {
+                    item.style.color = "black"
                     item.style.backgroundColor = mycolor[mc]
                 }
                 mc = Math.floor(Math.random() * mycolor.length)
                 for (let item of h1third) {
+                    item.style.color = "black"
                     item.style.backgroundColor = mycolor[mc]
                 }
             }
@@ -134,11 +138,13 @@
                 b2 = Math.floor(Math.random() * 256)
                 b3 = Math.floor(Math.random() * 256)
                 for (let item of h1list) {
+                    item.style.color = "black"
                     item.style.backgroundColor = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
                 }
             }
             numberbyran.onclick = function () {
                 for (let item of h1list) {
+                    item.style.color = "black"
                     if (Number(item.innerText) < 11) {
                         item.style.backgroundColor = "yellow"
                     } else if (Number(item.innerText) > 10 && Number(item.innerText) < 21) {
