@@ -69,6 +69,7 @@ function setfontColor(num) {
 //function(){}  이거랑
 //()=>{} 이 코드가 서로 같은 거
 window.onload = () => {
+    let h1list = document.querySelectorAll("h1")
     //로또 생성 버튼
     let start_lotto = document.querySelector('#create_lotto')
 
@@ -117,6 +118,9 @@ window.onload = () => {
             document.querySelectorAll('#three>.three')[i].style
                 .backgroundColor = lotto_colors[Math.floor(Math.random() * 5)]
         }
+        for (let item of h1list) {
+            item.style.color = "black"
+        }
     }
     let case_by_case_random = document.querySelector('#case_by_case_random')
     case_by_case_random.onclick = () => {
@@ -135,6 +139,9 @@ window.onload = () => {
             document.querySelectorAll('#three>.three')[i].style
                 .backgroundColor = tempcolor
         }
+        for (let item of h1list) {
+            item.style.color = "black"
+        }
     }
 
     let same_color = document.querySelector('#same_color')
@@ -151,6 +158,9 @@ window.onload = () => {
             document.querySelectorAll('#three>.three')[i].style
                 .backgroundColor = tempcolor
         }
+        for (let item of h1list) {
+            item.style.color = "black"
+        }
     }
     let number_by_number = document.querySelector('#number_by_number')
     number_by_number.onclick = () => {
@@ -161,6 +171,9 @@ window.onload = () => {
                 .backgroundColor = setBackgroundColor(document.querySelectorAll('#two>.two')[i].innerText)
             document.querySelectorAll('#three>.three')[i].style
                 .backgroundColor = setBackgroundColor(document.querySelectorAll('#three>.three')[i].innerText)
+        }
+        for (let item of h1list) {
+            item.style.color = "black"
         }
     }
     let black_and_white = document.querySelector('#black_and_white')
