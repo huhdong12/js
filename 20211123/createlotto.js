@@ -32,9 +32,9 @@ function createLottoNum(drwnum) {
         }
         numbers.push(mynum)
     }
-    numbers.sort(function (a, b) {
-        return a - b
-    })
+    // numbers.sort(function (a, b) {
+    //     return a - b
+    // })
     let temp = new lotto(drwnum,
         numbers[0], numbers[1], numbers[2], numbers[3],
         numbers[4], numbers[5], numbers[6])

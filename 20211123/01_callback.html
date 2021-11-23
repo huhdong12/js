@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <script>
+        let arr1 = [10, 5, 20, 3, 40]
+        let arr2 = ['10', '5', '20', '3', '40']
+        let arr3 = ['b', 'f', 'a', 's', 'd']
+        let orderbyNum = function (a, b) {
+            return a - b
+        }
+        let orderbyNumDesc = (a, b) => {
+            return b - a
+        }
+        console.log(arr1.sort())
+        console.log(arr1.sort(orderbyNum))
+        console.log(arr1.sort(orderbyNumDesc))
+        console.log(arr2.sort())
+        console.log(arr3.sort())
+    </script>
+</body>
+
+</html>

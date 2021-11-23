@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class student {
+            constructor(name, num, age) {
+                this.name = name
+                this.num = num
+                this.age = age
+            }
+        }
+        let students = []
+        for (let i = 0;; i++) {
+            let names = prompt("이름 입력 (그만)입력시 종료")
+            if (names == "그만") {
+                break
+            }
+            let nums = prompt("번호 입력")
+            let ages = prompt("나이 입력")
+            let a = new student(names, nums, ages)
+            students.push(a)
+        }
+        students.sort(function (a, b) {
+            return a.num - b.num
+        })
+        console.log(students)
+        for (let item of students) {
+            alert("번호:" + item.num + " 이름:" + item.name + " 나이:" + item.age)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

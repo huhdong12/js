@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+        function threeTime(func) {
+            for (let i = 0; i < 3; i++) {
+                func()
+            }
+        }
+
+        function aaa() {
+            let a = prompt('이름이 뭐에요?')
+            alert('당신의 이름은 ' + a + "입니다.")
+        }
+        threeTime(function () {
+            alert('안녕')
+        })
+        threeTime(() => {
+            console.log('Hello')
+        })
+        threeTime(aaa)
+    </script>
+</body>
+
+</html>
