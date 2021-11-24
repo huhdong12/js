@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let sun = document.querySelector("#sun")
+            let earth = document.querySelector("#earth")
+            let moon = document.querySelector("#moon")
+            let hwa = document.querySelector("#hwa")
+            sun.style.position = "fixed"
+            earth.style.position = "fixed"
+            moon.style.position = "fixed"
+            hwa.style.position = "fixed"
+            sun.style.left = 700 + "px"
+            sun.style.top = 400 + "px"
+            let earthAngle = 0
+            let moonAngle = 0
+            let hwaAngle = 0
+            setInterval(function () {
+                let earthLeft = 700 + 150 * Math.cos(earthAngle)
+                let earthTop = 400 + 150 * Math.sin(earthAngle)
+                let moonLeft = earthLeft + 50 * Math.cos(moonAngle)
+                let moonTop = earthTop + 50 * Math.sin(moonAngle)
+                let hwaLeft = 700 + 300 * Math.cos(hwaAngle)
+                let hwaTop = 400 + 300 * Math.sin(hwaAngle)
+                earth.style.left = earthLeft + "px"
+                earth.style.top = earthTop + "px"
+                moon.style.left = moonLeft + "px"
+                moon.style.top = moonTop + "px"
+                hwa.style.left = hwaLeft + "px"
+                hwa.style.top = hwaTop + "px"
+                earthAngle += 0.1
+                moonAngle += 0.3
+                hwaAngle += 0.05
+            }, 1000 / 30)
+        }
+    </script>
+</head>
+
+<body>
+    <img src="uzu.jpg" alt="">
+    <div>
+        <h1 id="sun"><img src="sun.png" alt=""></h1>
+        <h1 id="earth"><img src="earth.png" alt=""></h1>
+        <h1 id="moon"><img src="moon.png" alt=""></h1>
+        <h1 id="hwa"><img src="mars.png" alt=""></h1>
+    </div>
+</body>
+
+</html>

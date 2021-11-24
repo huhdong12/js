@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            position: absolute;
+            top: 550px;
+        }
+
+        #push {
+            position: absolute;
+            top: 549px;
+            left: 250px;
+        }
+
+        #plus {
+            position: absolute;
+            top: 549px;
+            left: 200px;
+        }
+    </style>
+    <script>
+        function nextRandomInteger(limit) {
+            return Math.round(Math.random() * limit)
+        }
+        let randomAlphabet = (
+            function () {
+                let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                return function () {
+                    return alphabet.charAt(nextRandomInteger(25))
+                }
+            }
+        )()
+        let randomkorean = (
+            function () {
+                let hangle = '가나다라마바사아자차카타파하'
+                return function () {
+                    return hangle.charAt(nextRandomInteger(13))
+                }
+            }
+        )()
+        let randomjapan = (
+            function () {
+                let japan = 'あいうえおはひふへほかきくけこさしすせそたちつてとなにぬねのまみむめもやゆよらりるれろ'
+                return function () {
+                    return japan.charAt(nextRandomInteger(42))
+                }
+            }
+        )()
+
+        function randomSpeed(maxSpeed) {
+            return Math.random() * maxSpeed - Math.random() * maxSpeed
+        }
+    </script>
+    <script>
+        let canvasWidth = 700
+        let canvasHeight = 400
+
+        function MovingText() {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'fixed'
+            document.body.appendChild(this.b)
+            this.move = function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                if (this.x < 0 || this.x > canvasWidth)
+                    this.vx *= -1
+                if (this.y < 0 || this.y > canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                this.b.style.left = this.x + 'px'
+                this.b.style.top = this.y + 'px'
+                this.b.style.color = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
+            }
+        }
+
+        function MovingText2() {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = randomkorean()
+            this.b.style.position = 'fixed'
+            document.body.appendChild(this.b)
+            this.move = function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                if (this.x < 0 || this.x > canvasWidth)
+                    this.vx *= -1
+                if (this.y < 0 || this.y > canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                this.b.style.left = this.x + 'px'
+                this.b.style.top = this.y + 'px'
+                this.b.style.color = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
+            }
+        }
+
+        function MovingText3() {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = randomjapan()
+            this.b.style.position = 'fixed'
+            document.body.appendChild(this.b)
+            this.move = function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                if (this.x < 0 || this.x > canvasWidth)
+                    this.vx *= -1
+                if (this.y < 0 || this.y > canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                this.b.style.left = this.x + 'px'
+                this.b.style.top = this.y + 'px'
+                this.b.style.color = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
+            }
+        }
+
+        function MovingText4() {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = make.value
+            this.b.style.position = 'fixed'
+            document.body.appendChild(this.b)
+            this.move = function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                if (this.x < 0 || this.x > canvasWidth)
+                    this.vx *= -1
+                if (this.y < 0 || this.y > canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                this.b.style.left = this.x + 'px'
+                this.b.style.top = this.y + 'px'
+                this.b.style.color = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
+            }
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            let make = document.querySelector("#make")
+            let plus = document.querySelector("#plus")
+            let push = document.querySelector("#push")
+            let movingText = []
+            for (let i = 0; i < 30; i++) {
+                movingText.push(new MovingText())
+            }
+            setInterval(function () {
+                for (let i in movingText)
+                    movingText[i].move()
+            }, 1000 / 30)
+            let movingText2 = []
+            for (let i = 0; i < 30; i++) {
+                movingText2.push(new MovingText2())
+            }
+            setInterval(function () {
+                for (let i in movingText2)
+                    movingText2[i].move()
+            }, 1000 / 30)
+            let movingText3 = []
+            for (let i = 0; i < 30; i++) {
+                movingText3.push(new MovingText3())
+            }
+            setInterval(function () {
+                for (let i in movingText3)
+                    movingText3[i].move()
+            }, 1000 / 30)
+
+            setInterval(function () {
+                b1 = Math.floor(Math.random() * 256)
+                b2 = Math.floor(Math.random() * 256)
+                b3 = Math.floor(Math.random() * 256)
+                document.body.style.backgroundColor = "rgb(" + b1 + "," + b2 + "," + b3 + ")"
+            }, 1000 / 30)
+
+            push.onclick = function () {
+                setInterval(function () {
+                    for (let i in movingText)
+                        movingText[i].move()
+                }, 1000 / 30)
+            }
+
+            plus.onclick = function () {
+                movingText.push(new MovingText4())
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="make">
+    <button id="plus">추가</button>
+    <button id="push">영어 가속</button>
+</body>
+
+</html>
