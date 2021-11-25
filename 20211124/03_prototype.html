@@ -41,7 +41,9 @@
             this.b = document.createElement('h1')
 
             console.log(param)
-
+            //undefined은 false랑 동일하게취급
+            //0,null,NaN,'',undefined같은 건 전부
+            //false로 취급
             if (!param) //param이 없는 경우
                 this.b.innerText = randomAlphabet()
             else
