@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjq.js"></script>
+    <style>
+        .max {
+            color: deeppink
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1</h1>
+    <h1 class="a1">0</h1>
+    <h2 class="a1">0</h2>
+    <h1>2</h1>
+    <h1 class="a2">0</h1>
+    <h2 class="a2">0</h2>
+    <h1>3</h1>
+    <h1 class="a3">0</h1>
+    <h2 class="a3">0</h2>
+    <h1>4</h1>
+    <h1 class="a4">0</h1>
+    <h2 class="a4">0</h2>
+    <h1>5</h1>
+    <h1 class="a5">0</h1>
+    <h2 class="a5">0</h2>
+    <h1>6</h1>
+    <h1 class="a6">0</h1>
+    <h2 class="a6">0</h2>
+    <script>
+        let bigCountLaw = prompt("주사위 시도 횟수")
+        let emptyArray = [0, 0, 0, 0, 0, 0]
+        for (let i = 0; i < bigCountLaw; i++) {
+            let random = Math.floor(Math.random() * 6)
+            emptyArray[random]++
+        }
+        for (let i = 1; i <= 6; i++) {
+            document.querySelector('.a' + i).innerHTML = emptyArray[i - 1]
+        }
+        let max = 0
+        let maxIndex = 0
+        for (let i = 1; i <= 6; i++) {
+            let percent = document.querySelector("h1.a" + i).innerHTML
+            if (max < Number(percent)) {
+                max = percent
+                maxIndex = i
+            }
+            percent = (percent / bigCountLaw) * 100
+            document.querySelector("h2.a" + i).innerHTML = parseFloat(percent).toFixed(2) + "%"
+        }
+        document.querySelector("h1.a" + maxIndex).setAttribute("class", "max")
+        document.querySelector("h2.a" + maxIndex).setAttribute("class", "max")
+    </script>
+</body>
+
+</html>
