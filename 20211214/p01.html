@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class member {
+            constructor(name, gender, number) {
+                this.name = name
+                this.gender = gender
+                this.number = number
+            }
+        }
+    </script>
+</head>
+
+<body>
+    이름:
+    <input type="text">
+    성별:
+    <input type="text">
+    번호:
+    <input type="text">
+    <button id="push">학생 추가</button>
+    <button id="out">출력하기</button>
+    <button id="reset">리셋하기</button>
+    <script>
+        let pushbtn = document.querySelector("#push")
+        let outbtn = document.querySelector("#out")
+        let resetbtn = document.querySelector("#reset")
+        let body = document.querySelector("body")
+        let person = []
+        pushbtn.onclick = function () {
+            let name = document.querySelectorAll("input")[0].value
+            let gender = document.querySelectorAll("input")[1].value
+            let number = document.querySelectorAll("input")[2].value
+            for (let i of person) {
+                if (i.number == number) {
+                    alert("번호 중복")
+                    return
+                }
+            }
+            person.push(new member(name, gender, number))
+        }
+        outbtn.onclick = function () {
+            person.sort(function (a, b) {
+                return a.number - b.number
+            })
+            for (let i of person) {
+                let myh1 = document.createElement("h1")
+                myh1.textContent = `${i.name}학생은 ${i.gender}학생이며, ${i.number}번이다.`
+                if (i.gender == "남") {
+                    myh1.style.color = "blue"
+                    myh1.style.backgroundColor = "green"
+                } else if (i.gender == "여") {
+                    myh1.style.color = "pink"
+                    myh1.style.backgroundColor = "black"
+                }
+                body.appendChild(myh1)
+            }
+        }
+        resetbtn.onclick = function () {
+            let allh1 = document.querySelectorAll("h1")
+            for (let j of allh1) {
+                j.innerText = ""
+            }
+        }
+    </script>
+</body>
+
+</html>
