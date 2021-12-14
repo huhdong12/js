@@ -5,6 +5,8 @@ class Student {
         this.번호 = 번호
     }
     투스트링() {
-        return `'${this.이름}' 학생은 '${this.성별}'학생이며 '${this.번호}'번이다.`
+        return `'${this.이름}' 학생은 '${this.성별}' 학생이며 '${this.번호}'번이다.`
     }
 }
+
+let students = []
