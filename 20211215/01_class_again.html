@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            constructor(name, age, 견종) {
+                this.name = name
+                this.age = age
+                this.좋아하는_견종 = 견종
+            }
+            투스트링() {
+                return `이름:${this.name}, 나이:${this.age}, 좋아하는 견종:${this.좋아하는_견종}`
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let mydoggy = new Person("동주니", 30, "골든리트리버")
+        alert(mydoggy.name + "는 " + mydoggy.age + "살이고, " + mydoggy.좋아하는_견종 + "을 좋아합니다.")
+
+        let oak = new Person("옥수철", 17, "시바견")
+        alert(oak.name + "은 " + oak.age + "살이고, " + oak.좋아하는_견종 + "을 좋아합니다.")
+
+        alert(mydoggy.투스트링())
+        alert(oak.투스트링())
+
+        let people = []
+        people.push(mydoggy)
+        people.push(oak)
+        people.push(new Person("권도균", 20, "진돗개"))
+
+        for (const item of people)
+            console.log(item.투스트링())
+    </script>
+</body>
+
+</html>
