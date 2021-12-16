@@ -13,12 +13,13 @@
 
 <body>
     <div id="root"></div>
+    <!-- img / 중요 -->
     <script type="text/babel">
         const name="개"
         const imgUrl="https://picsum.photos/id/1025/600/400"
         const component=<div>
             <h1>{name}가 나타났다!</h1>
-            <img src={imgUrl} alt=""/>
+            <img src={imgUrl} alt=""/> 
             </div>
         const container=document.getElementById("root")
         ReactDOM.render(component,container)
